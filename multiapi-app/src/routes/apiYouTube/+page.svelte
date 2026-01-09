@@ -78,8 +78,7 @@
     >
       {#each videos as video}
         <a
-          href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
-          target="_blank"
+          href={`/apiYouTube?v=${video.id.videoId}`}
           class="bg-white/10 p-3 rounded-xl hover:bg-yellow-400/20 transition transform hover:scale-105"
         >
           <img

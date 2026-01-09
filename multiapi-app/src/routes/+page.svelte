@@ -1,6 +1,7 @@
 <script>    
-    import PokemonWidget from '$lib/components/PokemonWidget.svelte';
-    import WeatherWidget from '$lib/components/WeatherWidget.svelte';
+	import PokemonWidget from '$lib/components/PokemonWidget.svelte';
+	import WeatherWidget from '$lib/components/WeatherWidget.svelte';
+	import YoutubeWidget from '$lib/components/YoutubeWidget.svelte';
 
  let  {data } = $props(); 
     
@@ -63,36 +64,34 @@
                                       shadow-lg transition-shadow duration-300 hover:-translate-y-1"
 	>
 		<div class="flex flex-col items-center p-6">
-			<div
-				class="mb-4 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-white"
-			>
-				<img
-					src="/rick-morty-logo.png"
-					alt="Rick and Morty Logo"
-					class="h-20 w-20 object-contain"
-				/>
-			</div>
+			<video
+				src="/rickymorty.mp4"
+				autoplay
+				loop
+				muted
+				playsinline
+				class="mb-4 h-full w-full rounded-lg object-cover"
+			></video>
 			<span class="mb-1 text-2xl">👽 Rick & Morty</span>
 			<p class="text-center text-sm text-green-100">Explora el multiverso y sus personajes.</p>
 		</div>
 	</a>
 
 	<!-- YouTube (ícono: ▶️) -->
-	<a
-		href="/apiYouTube"
+	<div
 		class="group block transform overflow-hidden rounded-xl bg-gradient-to-br from-red-600 to-red-800 text-white
                                      shadow-lg transition-shadow duration-300 hover:-translate-y-1"
 	>
 		<div class="flex flex-col items-center p-6">
 			<div
-				class="mb-4 flex h-24 w-24 items-center justify-center overflow-hidden rounded-md bg-white"
+				class="mb-4 flex h-48 w-full items-center justify-center overflow-hidden rounded-md bg-black/20"
 			>
-				<img src="/youtube-logo.png" alt="YouTube Logo" class="h-20 w-20 object-contain" />
+				<YoutubeWidget query="programming tips" limit={5} />
 			</div>
 			<span class="mb-1 text-2xl">▶️ YouTube</span>
 			<p class="text-center text-sm text-red-100">Encuentra videos y tendencias.</p>
 		</div>
-	</a>
+	</div>
 </div>
 </div>
 
